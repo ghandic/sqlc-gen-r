@@ -144,19 +144,15 @@ Here's how to automate code generation using Github Actions:
             runs-on: ubuntu-latest
             steps:
             - uses: actions/checkout@v4
-            - name: Set up Go
-            uses: actions/setup-go@v5
-            with:
-                go-version: '1.23'
-
-            - name: Install sqlc
-            run: go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+            - uses: sqlc-dev/setup-sqlc@v4
+              with:
+                sqlc-version: '1.18.0'
 
             - name: Generate R code
-            run: cd example && sqlc generate
+              run: (cd example && sqlc generate)
 
             - name: Commit changes (if any)
-            run: |
+              run: |
                 git config --local user.email "actions@github.com"
                 git config --local user.name "GitHub Actions"
                 git add example/db.R
