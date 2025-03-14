@@ -155,7 +155,7 @@ Here's how to automate code generation using Github Actions:
               run: |
                 git config --local user.email "actions@github.com"
                 git config --local user.name "GitHub Actions"
-                git add example/db.R
+                git add example/out/db.R
                 git diff --exit-code || git commit -m "Regenerate R code"
                 git push
     ```
