@@ -22,6 +22,8 @@ jobs:
           run: |
             git config --local user.email "actions@github.com"
             git config --local user.name "GitHub Actions"
+            git status
             git add example/out/db.R
+            git status
             git diff --exit-code || git commit -m "Regenerate R code"
             git push
