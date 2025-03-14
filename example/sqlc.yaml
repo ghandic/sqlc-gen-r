@@ -1,0 +1,15 @@
+version: "2"
+plugins:
+- name: sqlc-gen-r
+  wasm:
+    url: https://github.com/ghandic/sqlc-gen-r/releases/download/v0.1.0/main.wasm
+    sha256: 77c068075ebe635e0f8f45a9130f963316b5edb852f4294c1696d4d1017a94ec
+sql:
+  - engine: "sqlite"
+    queries: "queries.sql"
+    schema: "schema.sql"
+    codegen:
+    - out: out
+      plugin: sqlc-gen-r
+      options:
+        filename: "db.R"
