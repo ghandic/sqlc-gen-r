@@ -30,7 +30,7 @@
       - name: sqlc-gen-r
         wasm:
             url: https://github.com/ghandic/sqlc-gen-r/releases/download/v0.1.0/main.wasm
-            sha256: 77c068075ebe635e0f8f45a9130f963316b5edb852f4294c1696d4d1017a94ec
+            sha256: 3ffd8a5272cf0ff2452f9fd34ed6388bc0c8e0a27d859494a3a93b3f0151f619
     sql:
      - engine: "sqlite"
        queries: "queries.sql"
