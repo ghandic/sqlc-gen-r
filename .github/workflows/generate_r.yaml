@@ -25,6 +25,6 @@ jobs:
             git status
             ls -l example/out
             git add example/out/db.R
-            git status
+            git diff
             git diff --exit-code || git commit -m "Regenerate R code"
             git push
